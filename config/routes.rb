@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       collection do
                   post '/select_category',    to: 'orders#select_category'
                   post '/select_subcategory', to: 'orders#select_subcategory'
+                  post '/select_product',     to: 'orders#select_product'
        end
    end
    resources :products do
