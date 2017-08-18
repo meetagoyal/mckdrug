@@ -1,17 +1,17 @@
-class ProductsController < ApplicationController
+class OrdersController < ApplicationController
     
-  before_action :auth_admin
-
-  def index
-    @products = Product.all
-  end
-
+  before_action :auth_user
+  
   def new
     @categories = Category.all
-    @product = Product.new
-    
+    @order = Order.new
   end
-
+  
+  def index
+    
+     @orders = @user.orders
+  end
+  
 
 def select_category
     @category = Category.find(params[:category_id])
@@ -20,29 +20,26 @@ def select_category
   end
 
   def select_subcategory
-    
-    @product = Product.new
+    @order = Order.new
     @category = Category.find(params[:category_id])
     @subcategory = Subcategory.find(params[:subcategory_id])
-
     render 'new'
   end
   
   
   def create
-    @product = Product.new(params[:product].permit(:name ,:price , :packsize , :quantity, :subcategory_id , :photo))
-    if @product.save
-      redirect_to products_path
+    @order = Order.new(params[:product].permit(:name ,:price , :packsize , :quantity, :subcategory_id , :photo))
+    if @order.save
+      redirect_to orders_path
     else
       render 'new'
     end
   end
 
   def destroy
-    
-      product = Product.find(params[:id])
-      product.destroy
-      redirect_to products_path
+      order = Product.find(params[:id])
+      order.destroy
+      redirect_to orders_path
       
   end
 

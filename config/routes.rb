@@ -4,6 +4,12 @@ Rails.application.routes.draw do
    root to: "home#index"
    resources :subcategories
    resources :categories 
+   resources :orders do
+      collection do
+                  post '/select_category',    to: 'orders#select_category'
+                  post '/select_subcategory', to: 'orders#select_subcategory'
+       end
+   end
    resources :products do
     collection do
       post '/select_category', to: 'products#select_category'
