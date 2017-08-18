@@ -1,4 +1,4 @@
-class CategoryController < ApplicationController
+class CategoriesController < ApplicationController
     
   before_action :auth_admin
 
