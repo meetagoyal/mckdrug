@@ -30,7 +30,7 @@
         <td><%= s.subcategory.name  %></td>
         <td><%= s.id %></td>
         <td><%= s.name %></td>
-        <td><%= s.price %></td>
+        <td><%= number_to_currency s.price %></td>
         <td><%= s.packsize %></td>
         <td><%= s.quantity %></td>
          <td><%= image_tag(s.photo, width: 75, height: 75, class: 'img-thumbnail') if s.photo %></td>
