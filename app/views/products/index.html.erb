@@ -1,0 +1,40 @@
+<h1 class="display-4 p-2"> Products</h1>
+
+<a href="/products/new" class="btn btn-outline-primary m-2">
+  <i class="fa fa-plus-circle"></i> Add Product </a>
+
+<table class="table table-striped">
+  <thead class="thead-inverse">
+    <tr>
+      <th></th>
+      <th>Category</th>
+      <th>SubCategory</th>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>PackSize</th>
+      <th>Quantity</th>
+      <th>Photo</th>
+      </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |s| %>
+      <tr>
+        <td>
+          <%= link_to product_path(s), method: :delete do %>
+            <i class="fa fa-trash-o"></i>
+          <% end %>
+
+        </td>
+        <td><%= s.subcategory.category.name  %></td>
+        <td><%= s.subcategory.name  %></td>
+        <td><%= s.id %></td>
+        <td><%= s.name %></td>
+        <td><%= s.price %></td>
+        <td><%= s.packsize %></td>
+        <td><%= s.quantity %></td>
+         <td><%= image_tag(s.photo, width: 75, height: 75, class: 'img-thumbnail') if s.photo %></td>
+        </tr>
+      <% end %>
+  </tbody>
+</table>
