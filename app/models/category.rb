@@ -9,6 +9,7 @@
 #
 
 class Category < ApplicationRecord
+  
   has_many :subcategories, dependent: :delete_all
 
   validates :name, presence: true

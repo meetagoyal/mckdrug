@@ -12,6 +12,7 @@
 class Subcategory < ApplicationRecord
     
   belongs_to :category
+  has_many :products, dependent: :delete_all
   validates :name ,  presence: true
   validates :name, uniqueness: { scope: [:name, :category_id] }
 end

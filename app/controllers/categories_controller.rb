@@ -7,23 +7,23 @@ class CategoriesController < ApplicationController
   end
 
   def new
-    @category = Category.all
+    @category = Category.new
   end
 
   def create
       
-    # @ship = Ship.new(params[:ship].permit(:name, :photo))
-    # if @ship.save
-    #   redirect_to ships_path
-    # else
-    #   render 'new'
-    # end
+    @category = Category.new(params[:category].permit(:name))
+    if @category.save
+      redirect_to categories_path
+    else
+      render 'new'
+    end
   end
 
   def destroy
-    category = Category.find(params[:id])
-    category.destroy
-    redirect_to categories_path
+      category = Category.find(params[:id])
+      category.destroy
+      redirect_to categories_path
   end
 
   def show

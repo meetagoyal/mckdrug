@@ -1,26 +1,28 @@
-<h1 class="display-4 p-2"> Categories</h1>
+<h1 class="display-4 p-2"> Sub Categories</h1>
 
 <a href="/categories/new" class="btn btn-outline-primary m-2">
-  <i class="fa fa-plus-circle"></i> Add Category </a>
+  <i class="fa fa-plus-circle"></i> Add SubCategory </a>
 
 <table class="table table-striped">
   <thead class="thead-inverse">
     <tr>
       <th></th>
+      <th>CategoryId</th>
       <th>Id</th>
       <th>Name</th>
       </tr>
   </thead>
   <tbody>
-    <% @categories.each do |c| %>
+    <% @subcategories.each do |s| %>
       <tr>
         <td>
-          <%= link_to category_path(c), method: :delete do %>
+          <%= link_to subcategory_path(s), method: :delete do %>
             <i class="fa fa-trash-o"></i>
           <% end %>
         </td>
-        <td><%= c.id %></td>
-        <td><%= c.name %></td>
+        <td><%= s.category_id %></td>
+        <td><%= s.id %></td>
+        <td><%= s.name %></td>
         </tr>
       <% end %>
   </tbody>
