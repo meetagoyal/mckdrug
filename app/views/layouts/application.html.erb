@@ -8,7 +8,18 @@
     <%= javascript_include_tag 'application' %>
   </head>
 
-  <body>
-    <%= yield %>
+   <body>
+    <%= render 'nav' %>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <div style="margin-bottom: 100px;">
+            <%= render 'alerts' %>
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%= render 'footer' %>
   </body>
 </html>

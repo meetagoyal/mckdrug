@@ -1,0 +1,27 @@
+<h1 class="display-4 p-2">Ships</h1>
+
+<a href="/ships/new" class="btn btn-outline-primary m-2">
+  <i class="fa fa-plus-circle"></i> Add Category </a>
+
+<table class="table table-striped">
+  <thead class="thead-inverse">
+    <tr>
+      <th></th>
+      <th>Id</th>
+      <th>Name</th>
+      </tr>
+  </thead>
+  <tbody>
+    <% @categories.each do |c| %>
+      <tr>
+        <td>
+          <%= link_to category_path(s), method: :delete do %>
+            <i class="fa fa-trash-o"></i>
+          <% end %>
+        </td>
+        <td><%= link_to c.id, category_path(s) %></td>
+        <td><%= s.name %></td>
+        </tr>
+      <% end %>
+  </tbody>
+</table>

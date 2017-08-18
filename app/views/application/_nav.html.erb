@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-  <a class="navbar-brand" href="/">Carnival</a>
+  <a class="navbar-brand" href="/">MckDrug</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -15,17 +15,17 @@
         </li>
       <% elsif @is_admin %>
         <li class="nav-item">
-          <a class="nav-link" href="/categories"><i class="fa fa-bus"></i> Add Category</a>
+          <a class="nav-link" href="/categories"><i class="fa fa-medkit"></i> Add Category</a>
         </li>
          <li class="nav-item">
-          <a class="nav-link" href="/subcategories"><i class="fa fa-bus"></i> Add SubCategory</a>
+          <a class="nav-link" href="/subcategories"><i class="fa fa-stethoscope"></i> Add SubCategory</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/products"><i class="fa fa-ship"></i> Add Product</a>
+          <a class="nav-link" href="/products"><i class="fa fa-user-md"></i> Add Product</a>
         </li>
       <% elsif @is_user %>
         <li class="nav-item">
-          <a class="nav-link" href="/shops"><i class="fa fa-gift"></i> BuyDrug</a>
+          <a class="nav-link" href="/shops"><i class="fa fa-user-md"></i> BuyDrug</a>
         </li>
       <% end %>
 
